@@ -4,11 +4,11 @@
 """
  @Author   : 石头
  @Time     : 2022/11/3 10:00
- @File     : tools.py
+ @File     : query.py
  @Project  : rd3-test-automation
 """
 
-from common import DB, log
+from common import database, log
 from config import setting
 
 logger = log.FrameLog()
@@ -20,7 +20,7 @@ def db():
 
     :return: 数据库对象
     """
-    d = DB.OracleDB(
+    d = database.OracleDB(
         username=setting.DevConfig.username,
         password=setting.DevConfig.password,
         host=setting.DevConfig.dbhost)

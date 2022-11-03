@@ -26,8 +26,7 @@ python+pytest+allure
     │      
     ├─common                             - 公共方法
     │      aes.py                        # aes加密
-    │      captcha_identify.py           # 验证码识别
-    │      DB.py                         # 数据库
+    │      database.py                         # 数据库
     │      delete.py                     # 删除sql
     │      faker_data.py                 # 假数据
     │      log.py                        # 日志模块
