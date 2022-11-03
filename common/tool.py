@@ -1,9 +1,17 @@
-# -*- coding=utf-8 -*-
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+ @Author   : 石头
+ @Time     : 2022/11/3 10:00
+ @File     : tools.py
+ @Project  : rd3-test-automation
+"""
+
 import os
 import time
 from datetime import datetime
 
-import chardet
 import base64
 import arrow
 import yaml

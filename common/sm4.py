@@ -1,4 +1,13 @@
-# -*- coding=utf-8 -*-
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+ @Author   : 石头
+ @Time     : 2022/11/3 10:00
+ @File     : tools.py
+ @Project  : rd3-test-automation
+"""
+
 from sys import version_info
 
 from base64 import b64encode, b64decode

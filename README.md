@@ -7,12 +7,10 @@ python+pytest+allure
 `pip install -r requirements.txt`
   
 ### 准备数据
-使用data_preoaration.py一键生成
 
 ### 目录结构
 
     │  .gitignore                        # 忽略文件配置
-    │  data_preparation.py               # 代码准备
     │  push.sh                           # git脚本
     │  README.md                         # 描述文件
     │  requirements.txt                  # 依赖库一键安装文件
@@ -28,7 +26,6 @@ python+pytest+allure
     │      
     ├─common                             - 公共方法
     │      aes.py                        # aes加密
-    │      baidu_image_identify.py       # 百度图片识别
     │      captcha_identify.py           # 验证码识别
     │      DB.py                         # 数据库
     │      delete.py                     # 删除sql
