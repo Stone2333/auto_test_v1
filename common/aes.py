@@ -15,21 +15,42 @@ from Crypto.Cipher import AES
 
 # 密钥（key）, 密斯偏移量（iv） CBC模式加密
 
-BLOCK_SIZE = 16  # Bytes
+# Bytes
+BLOCK_SIZE = 16
+
+# 偏移量
+vi = '7B4368CD0CFFE0B8'
 
 
 def pad(s):
+    """
+    获取真实字符串
+
+    :param s: 字符串
+    :return:
+    """
     return s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * \
         chr(BLOCK_SIZE - len(s) % BLOCK_SIZE)
 
 
-def unpad(s): return s[:-ord(s[len(s) - 1:])]
+def unpad(s):
+    """
+    获取真实字符串,去掉最后补位的数据
+
+    :param s: 字符串
+    :return:
+    """
+    return s[:-ord(s[len(s) - 1:])]
 
 
-vi = '7B4368CD0CFFE0B8'
+def aes_encrypt(key, data):
+    """
+    aes加密
 
-
-def AES_Encrypt(key, data):
+    :param key: 秘钥
+    :param data: 数据
+    :return: 加密数据
+    """
     data = pad(data)
     # 字符串补位
     cipher = AES.new(key.encode('utf8'), AES.MODE_CBC, vi.encode('utf8'))
@@ -41,7 +62,14 @@ def AES_Encrypt(key, data):
     return enctext
 
 
-def AES_Decrypt(key, data):
+def aes_decrypt(key, data):
+    """
+    aes解密
+
+    :param key: 秘钥
+    :param data: 数据
+    :return: 解密数据
+    """
     data = data.encode('utf8')
     encodebytes = base64.decodebytes(data)
     # 将加密数据转换位bytes类型数据
@@ -57,6 +85,6 @@ def AES_Decrypt(key, data):
 if __name__ == '__main__':
     key = '具体的key'
     data = '123456'
-    enctext = AES_Encrypt(key, data)
+    enctext = aes_encrypt(key, data)
     print(enctext)
-    AES_Decrypt(key, enctext)
+    aes_decrypt(key, enctext)
